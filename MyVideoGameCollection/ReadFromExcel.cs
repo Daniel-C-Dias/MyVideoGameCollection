@@ -6,10 +6,11 @@
 
     public class ReadFromExcel
     {
-        private VideoGameCatalog videoGameCatalog = new VideoGameCatalog();
-
-        public static void getExcelFile()
+        public static VideoGameCatalog getVideoGames()
         {
+            // instanciate a new Video Game Catalog
+            VideoGameCatalog videoGameCatalog = new VideoGameCatalog();
+
             // Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Git\MyVideoGameCollection\VideoGameCatalog.xlsx");
@@ -32,7 +33,7 @@
                         if (j == 1 && xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
                         {
                             // Add the value to the catolog
-                            this.videoGameCatalog.AddVideoGameToList(new VideoGame(xlRange.Cells[i, j].Value2.ToString(), xlWorksheet.Name, xlRange.Cells[i, j + 1].Value2.ToString()));
+                            videoGameCatalog.AddVideoGameToList(new VideoGame(xlRange.Cells[i, j].Value2.ToString(), xlWorksheet.Name, xlRange.Cells[i, j + 1].Value2.ToString()));
                         }
                     }
                 }
@@ -57,6 +58,8 @@
             // Quit and release
             xlApp.Quit();
             Marshal.ReleaseComObject(xlApp);
+
+            return videoGameCatalog;
         }
     }
 }

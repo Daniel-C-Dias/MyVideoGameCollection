@@ -6,7 +6,8 @@ namespace MyVideoGameCollection
     {
         private static void Main(string[] args)
         {
-            ReadFromExcel.getExcelFile();
+            VideoGameCatalog videoGameCatalog = ReadFromExcel.getVideoGames();
+            videoGameCatalog.ShowVideoGames();
 
 #if DEBUG
             Console.WriteLine("Press enter to close...");
