@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ReadFromExcel.cs" company="DanielDias, Lda">
+// <copyright file="WriteOnExcel.cs" company="DanielDias, Lda">
 //   Copyright (c) Daniel Dias. All rights reserved.
 // </copyright>
 // <summary>
@@ -13,13 +13,13 @@ namespace MyVideoGameCollection
     using System.Runtime.InteropServices;
     using Excel = Microsoft.Office.Interop.Excel;       // microsoft Excel 14 object in references-> COM tab
 
-    public class ReadFromExcel
+    /// <summary>
+    /// WriteOnExcel
+    /// </summary>
+    public class WriteOnExcel
     {
-        public static VideoGameCatalog getVideoGames()
+        public static void insertVideoGame(VideoGame videoGame)
         {
-            // instanciate a new Video Game Catalog
-            VideoGameCatalog videoGameCatalog = new VideoGameCatalog();
-
             // Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Git\MyVideoGameCollection\VideoGameCatalog.xlsx");
@@ -30,21 +30,12 @@ namespace MyVideoGameCollection
                 Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[x];
                 Excel.Range xlRange = xlWorksheet.UsedRange;
 
-                int rowCount = xlRange.Rows.Count;
-                int colCount = xlRange.Columns.Count;
-
-                //iterate over the rows and columns and print to the console as it appears in the file
-                //excel is not zero based!!
-                for (int i = 2; i <= rowCount; i++)
+                if (xlWorksheet.Name == videoGame.Platform)
                 {
-                    for (int j = 1; j <= colCount; j++)
-                    {
-                        if (j == 1 && xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
-                        {
-                            // Add the value to the catolog
-                            videoGameCatalog.AddVideoGameToList(new VideoGame(xlRange.Cells[i, j].Value2.ToString(), xlWorksheet.Name, xlRange.Cells[i, j + 1].Value2.ToString()));
-                        }
-                    }
+                    int rowCount = xlRange.Rows.Count;
+
+                    xlWorksheet.Cells[rowCount, 1] = videoGame.Name;
+                    xlWorksheet.Cells[rowCount, 2] = videoGame.Form;
                 }
 
                 // Release com objects to fully kill excel process from running in the background
@@ -67,8 +58,6 @@ namespace MyVideoGameCollection
             // Quit and release
             xlApp.Quit();
             Marshal.ReleaseComObject(xlApp);
-
-            return videoGameCatalog;
         }
     }
 }

@@ -64,11 +64,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumVideoGamePlatform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="EnumVideoGameForm.cs" />
     <Compile Include="ReadFromExcel.cs" />
     <Compile Include="VideoGame.cs" />
     <Compile Include="VideoGameCatalog.cs" />
+    <Compile Include="WriteOnExcel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

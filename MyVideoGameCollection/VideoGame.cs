@@ -1,4 +1,13 @@
-﻿namespace MyVideoGameCollection
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="VideoGame.cs" company="DanielDias, Lda">
+//   Copyright (c) Daniel Dias. All rights reserved.
+// </copyright>
+// <summary>
+// WriteOnExcel
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace MyVideoGameCollection
 {
     public class VideoGame
     {
