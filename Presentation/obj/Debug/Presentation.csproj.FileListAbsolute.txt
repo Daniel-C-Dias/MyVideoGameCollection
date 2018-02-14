@@ -1,2 +1,0 @@
-C:\Git\MyVideoGameCollection\Presentation\obj\Debug\Presentation.csprojResolveAssemblyReference.cache
-C:\Git\MyVideoGameCollection\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
