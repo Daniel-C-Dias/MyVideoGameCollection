@@ -25,7 +25,12 @@ namespace MyVideoGameCollection
             this.VideoGameList.Add(videogame);
         }
 
-        public void ShowVideoGames()
+        public List<VideoGame> getVideoGameList()
+        {
+            return this.VideoGameList;
+        }
+
+        public void ShowVideoGamesOnConsole()
         {
             foreach (VideoGame game in VideoGameList)
             {

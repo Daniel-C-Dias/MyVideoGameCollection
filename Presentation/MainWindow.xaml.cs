@@ -29,7 +29,17 @@
             {
                 fileDirectory = openFileDialog1.FileName;
                 VideoGameCatalog videoGameCatalog = ReadFromExcel.getVideoGames(fileDirectory);
-                videoGameCatalog.ShowVideoGames();
+
+                VideoGameCatalogView videoGameCatalogView = new VideoGameCatalogView();
+
+                foreach (VideoGame game in videoGameCatalog.getVideoGameList())
+                {
+                    videoGameCatalogView.listBox.Items.Add(game.ToString());
+                }
+
+                App.Current.MainWindow = videoGameCatalogView;
+                this.Close();
+                videoGameCatalogView.Show();
             }
         }
     }
