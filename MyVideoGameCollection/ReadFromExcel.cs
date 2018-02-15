@@ -15,14 +15,14 @@ namespace MyVideoGameCollection
 
     public class ReadFromExcel
     {
-        public static VideoGameCatalog getVideoGames()
+        public static VideoGameCatalog getVideoGames(string fileDirectory)
         {
             // instanciate a new Video Game Catalog
             VideoGameCatalog videoGameCatalog = new VideoGameCatalog();
 
             // Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Git\MyVideoGameCollection\VideoGameCatalog.xlsx");
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileDirectory);
 
             for (int x = 1; x <= xlWorkbook.Sheets.Count; x++)
             {

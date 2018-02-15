@@ -17,9 +17,6 @@ namespace MyVideoGameCollection
         {
             // WriteOnExcel.insertVideoGame(new VideoGame("test", "Sega Mega Drive", "test")); // Test if it's being writen on the excel file
 
-            VideoGameCatalog videoGameCatalog = ReadFromExcel.getVideoGames();
-            videoGameCatalog.ShowVideoGames();
-
 #if DEBUG
             Console.WriteLine("Press enter to close...");
             Console.ReadLine();
