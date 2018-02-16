@@ -8,9 +8,10 @@
         Title="VideoGameCatalogView" Height="829.043" Width="1026.315"
         WindowState="Maximized" Background="Black">
     <Grid Margin="0,0,3.6,-0.4">
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="770" Margin="28,29,0,0" VerticalAlignment="Top" Width="718" Background="#FFA69F9F" BorderBrush="Black" Foreground="White" />
         <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Left" Margin="869,78,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click" />
         <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="869,136,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click" />
         <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="869,195,0,0" VerticalAlignment="Top" Width="75" Click="DeleteButton_Click" />
+        <TabControl x:Name="tabControlPanel" HorizontalAlignment="Left" Height="735" Margin="28,26,0,0" VerticalAlignment="Top" Width="810">
+        </TabControl>
     </Grid>
 </Window>
