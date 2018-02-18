@@ -14,7 +14,7 @@
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadExcelFileOnClick(object sender, RoutedEventArgs e)
         {
             string fileDirectory = null;
 
@@ -36,6 +36,15 @@
                 this.Close();
                 videoGameCatalogView.Show();
             }
+        }
+
+        private void CreateNewCatalogOnClick(object sender, RoutedEventArgs e)
+        {
+            CreateNewCatalogView createNewCatalogView = new CreateNewCatalogView();
+
+            App.Current.MainWindow = createNewCatalogView;
+            this.Close();
+            createNewCatalogView.Show();
         }
     }
 }
