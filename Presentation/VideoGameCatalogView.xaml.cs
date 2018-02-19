@@ -16,7 +16,6 @@ namespace Presentation
         {
             InitializeComponent();
 
-            // to change when tab issue is resolved
             foreach (VideoGame game in videoGameCatalog.getVideoGameList())
             {
                 if ((tabList.Exists(x => x.Name == game.Platform)) == false)
@@ -39,6 +38,17 @@ namespace Presentation
             foreach (TabItem tabItem in this.tabList)
             {
                 tabControlPanel.Items.Add(tabItem);
+            }
+
+            foreach (VideoGame game in videoGameCatalog.getVideoGameList())
+            {
+                foreach (TabItem tabItem in tabControlPanel.Items)
+                {
+                    if (tabItem.Name == game.Platform)
+                    {
+                        tabItem. = game.Name + " " + game.Form;
+                    }
+                }
             }
         }
 

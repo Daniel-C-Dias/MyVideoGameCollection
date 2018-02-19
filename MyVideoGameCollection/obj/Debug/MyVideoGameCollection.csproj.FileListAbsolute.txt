@@ -1,8 +1,8 @@
-C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csprojResolveAssemblyReference.cache
-C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csproj.ResolveComReference.cache
-C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csproj.CoreCompileInputs.cache
 C:\Git\MyVideoGameCollection\MyVideoGameCollection\bin\Debug\MyVideoGameCollection.exe.config
 C:\Git\MyVideoGameCollection\MyVideoGameCollection\bin\Debug\MyVideoGameCollection.exe
 C:\Git\MyVideoGameCollection\MyVideoGameCollection\bin\Debug\MyVideoGameCollection.pdb
+C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csprojResolveAssemblyReference.cache
+C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csproj.ResolveComReference.cache
+C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.csproj.CoreCompileInputs.cache
 C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.exe
 C:\Git\MyVideoGameCollection\MyVideoGameCollection\obj\Debug\MyVideoGameCollection.pdb

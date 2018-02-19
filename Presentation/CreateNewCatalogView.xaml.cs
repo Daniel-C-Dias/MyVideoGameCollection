@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Presentation
 {
@@ -19,10 +12,8 @@ namespace Presentation
     /// </summary>
     public partial class CreateNewCatalogView : Window
     {
-
-        private List<TabItem> _tabItems;
         private TabItem _tabAdd;
-
+        private List<TabItem> _tabItems;
 
         public CreateNewCatalogView()
         {
@@ -33,10 +24,9 @@ namespace Presentation
                 // initialize tabItem array
                 _tabItems = new List<TabItem>();
 
-                // add a tabItem with + in header 
+                // add a tabItem with + in header
                 _tabAdd = new TabItem();
                 _tabAdd.Header = "+";
-                // tabAdd.MouseLeftButtonUp += new MouseButtonEventHandler(tabAdd_MouseLeftButtonUp);
 
                 _tabItems.Add(_tabAdd);
 
@@ -52,9 +42,7 @@ namespace Presentation
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-
 
         private TabItem AddTabItem()
         {
@@ -79,60 +67,6 @@ namespace Presentation
             _tabItems.Insert(count - 1, tab);
 
             return tab;
-        }
-
-        private void tabAdd_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            // clear tab control binding
-            tabDynamic.DataContext = null;
-
-            TabItem tab = this.AddTabItem();
-
-            // bind tab control
-            tabDynamic.DataContext = _tabItems;
-
-            // select newly added tab item
-            tabDynamic.SelectedItem = tab;
-        }
-
-        private void tab_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            TabItem tab = sender as TabItem;
-
-            TabProperty dlg = new TabProperty();
-
-            // get existing header text
-            dlg.txtTitle.Text = tab.Header.ToString();
-
-            if (dlg.ShowDialog() == true)
-            {
-                // change header text
-                tab.Header = dlg.txtTitle.Text.Trim();
-            }
-        }
-
-        private void tabDynamic_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            TabItem tab = tabDynamic.SelectedItem as TabItem;
-            if (tab == null) return;
-
-            if (tab.Equals(_tabAdd))
-            {
-                // clear tab control binding
-                tabDynamic.DataContext = null;
-
-                TabItem newTab = this.AddTabItem();
-
-                // bind tab control
-                tabDynamic.DataContext = _tabItems;
-
-                // select newly added tab item
-                tabDynamic.SelectedItem = newTab;
-            }
-            else
-            {
-                // your code here...
-            }
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -170,6 +104,60 @@ namespace Presentation
                     }
                     tabDynamic.SelectedItem = selectedTab;
                 }
+            }
+        }
+
+        private void tab_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TabItem tab = sender as TabItem;
+
+            TabProperty dlg = new TabProperty();
+
+            // get existing header text
+            dlg.txtTitle.Text = tab.Header.ToString();
+
+            if (dlg.ShowDialog() == true)
+            {
+                // change header text
+                tab.Header = dlg.txtTitle.Text.Trim();
+            }
+        }
+
+        private void tabAdd_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // clear tab control binding
+            tabDynamic.DataContext = null;
+
+            TabItem tab = this.AddTabItem();
+
+            // bind tab control
+            tabDynamic.DataContext = _tabItems;
+
+            // select newly added tab item
+            tabDynamic.SelectedItem = tab;
+        }
+
+        private void tabDynamic_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabItem tab = tabDynamic.SelectedItem as TabItem;
+            if (tab == null) return;
+
+            if (tab.Equals(_tabAdd))
+            {
+                // clear tab control binding
+                tabDynamic.DataContext = null;
+
+                TabItem newTab = this.AddTabItem();
+
+                // bind tab control
+                tabDynamic.DataContext = _tabItems;
+
+                // select newly added tab item
+                tabDynamic.SelectedItem = newTab;
+            }
+            else
+            {
+                // your code here...
             }
         }
     }
