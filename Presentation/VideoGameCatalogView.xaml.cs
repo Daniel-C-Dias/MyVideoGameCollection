@@ -28,6 +28,15 @@ namespace Presentation
                     // add controls to tab item
                     ListBox listBox = new ListBox();
                     listBox.Name = "ListBox";
+
+                    foreach (VideoGame videoGame in videoGameCatalog.getVideoGameList())
+                    {
+                        if ((string)tab.Header == videoGame.Platform)
+                        {
+                            listBox.Items.Add(videoGame.Name + "--------------------------------------------------------" + videoGame.Form);
+                        }
+                    }
+
                     tab.Content = listBox;
 
                     // add new tab to TabList
@@ -38,17 +47,6 @@ namespace Presentation
             foreach (TabItem tabItem in this.tabList)
             {
                 tabControlPanel.Items.Add(tabItem);
-            }
-
-            foreach (VideoGame game in videoGameCatalog.getVideoGameList())
-            {
-                foreach (TabItem tabItem in tabControlPanel.Items)
-                {
-                    if (tabItem.Name == game.Platform)
-                    {
-                        tabItem. = game.Name + " " + game.Form;
-                    }
-                }
             }
         }
 
