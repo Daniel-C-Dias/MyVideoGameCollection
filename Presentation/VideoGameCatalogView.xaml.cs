@@ -33,7 +33,7 @@ namespace Presentation
                     {
                         if ((string)tab.Header == videoGame.Platform)
                         {
-                            listBox.Items.Add(videoGame.Name + "--------------------------------------------------------" + videoGame.Form);
+                            listBox.Items.Add(videoGame.Name + "\t\t\t\t\t\t\t\t\t\t\t" + videoGame.Form);
                         }
                     }
 
@@ -52,6 +52,14 @@ namespace Presentation
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            var x = tabList[0].Content as ListBox;
+            var y = x.Items;
+
+            foreach (var item in y)
+            {
+                // TODO
+            }
+
             MessageBox.Show("Not Implemented Yet");
         }
 
