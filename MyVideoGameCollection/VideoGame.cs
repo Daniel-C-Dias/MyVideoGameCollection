@@ -15,7 +15,26 @@ namespace MyVideoGameCollection
         {
             this.Name = name;
             this.Platform = platform;
-            this.Form = form;
+
+            if (form == null || form == "")
+            {
+                this.Form = "Physical";
+            }
+            else
+            {
+                this.Form = form;
+            }
+        }
+
+        public VideoGame()
+        {
+        }
+
+        public VideoGame(string name, string platform)
+        {
+            this.Name = name;
+            this.Platform = platform;
+            this.Form = "Physical";
         }
 
         public string Form { get; set; }

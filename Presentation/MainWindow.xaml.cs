@@ -39,7 +39,7 @@
                 fileDirectory = openFileDialog1.FileName;
                 VideoGameCatalog videoGameCatalog = ReadFromExcel.getVideoGames(fileDirectory);
 
-                VideoGameCatalogView videoGameCatalogView = new VideoGameCatalogView(videoGameCatalog);
+                VideoGameCatalogView videoGameCatalogView = new VideoGameCatalogView(videoGameCatalog, fileDirectory);
 
                 App.Current.MainWindow = videoGameCatalogView;
                 this.Close();

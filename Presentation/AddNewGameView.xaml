@@ -17,7 +17,7 @@
             </Style>
         </Grid.Resources>
         <Label Content="Game Title:" Grid.Row="0" Grid.Column="0" Height="25" Grid.ColumnSpan="2" Margin="0,32,461,151" Width="69" />
-        <TextBox Name="txtTitle" Grid.Row="0" Height="25" Margin="24,32,24,151" Grid.Column="1" />
+        <TextBox Name="txtTitle" Grid.Row="0" Height="25" Margin="39,38,23.8,156.2" Grid.Column="1" />
         <Label Content="Game Platform:" Grid.Column="0" Height="25" Grid.ColumnSpan="2" Margin="0,91,441,92" />
         <TextBox Name="txtPlatform" Grid.Column="1" Height="25" Margin="39,91,24,92" />
         <StackPanel Orientation="Horizontal" Margin="10,209,461.8,163.2" Grid.ColumnSpan="2" Grid.RowSpan="2">
@@ -25,6 +25,6 @@
             <Button Content="Cancel" Name="btnCancel" IsCancel="True" Height="23"></Button>
         </StackPanel>
         <Label Content="Game Form:" Grid.Column="0" Height="25" Grid.ColumnSpan="2" Margin="0,153,456.8,38" />
-        <TextBox x:Name="txtPlatform_Copy" Grid.Column="1" Height="25" Margin="25,153,23.8,38" />
+        <TextBox x:Name="txtForm" Grid.Column="1" Height="25" Margin="39,155,23.8,39.2" />
     </Grid>
 </Window>

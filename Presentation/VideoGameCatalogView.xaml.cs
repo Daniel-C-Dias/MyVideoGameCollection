@@ -10,11 +10,14 @@ namespace Presentation
     /// </summary>
     public partial class VideoGameCatalogView : Window
     {
+        private string directoryOfFile;
         private List<TabItem> tabList = new List<TabItem>();
 
-        public VideoGameCatalogView(VideoGameCatalog videoGameCatalog)
+        public VideoGameCatalogView(VideoGameCatalog videoGameCatalog, string fileDirectory)
         {
             InitializeComponent();
+
+            directoryOfFile = fileDirectory;
 
             foreach (VideoGame game in videoGameCatalog.getVideoGameList())
             {
@@ -48,19 +51,37 @@ namespace Presentation
             {
                 tabControlPanel.Items.Add(tabItem);
             }
+
+            /*
+             * How to acess information within the list box:
+             *  var x = tabList[0].Content as ListBox;
+                var y = x.Items;
+
+                 foreach (var item in y)
+                 {
+                // TODO
+                 }
+             *
+             *
+             */
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            var x = tabList[0].Content as ListBox;
-            var y = x.Items;
+            AddNewGameView addNewGameView = new AddNewGameView(directoryOfFile);
 
-            foreach (var item in y)
+            // get existing header text
+            string selectedTabHeader = this.tabControlPanel.SelectedItem.ToString();
+            selectedTabHeader.Replace("System.Windows.Controls.TabItem Header:", "");
+            selectedTabHeader.Replace("Content:", "");
+            selectedTabHeader.Trim();
+            addNewGameView.txtPlatform.Text = selectedTabHeader;
+
+            if (addNewGameView.ShowDialog() == true)
             {
-                // TODO
+                MessageBox.Show("Video Game Added");
+                this.tabControlPanel.Items.Refresh();
             }
-
-            MessageBox.Show("Not Implemented Yet");
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

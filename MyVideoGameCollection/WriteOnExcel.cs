@@ -18,11 +18,11 @@ namespace MyVideoGameCollection
     /// </summary>
     public class WriteOnExcel
     {
-        public static void insertVideoGame(VideoGame videoGame)
+        public static void insertVideoGame(VideoGame videoGame, string fileDirectory)
         {
             // Create COM Objects. Create a COM object for everything that is referenced
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Git\MyVideoGameCollection\VideoGameCatalog.xlsx");
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileDirectory);
 
             for (int x = 1; x <= xlWorkbook.Sheets.Count; x++)
             {
