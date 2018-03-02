@@ -72,9 +72,10 @@ namespace Presentation
 
             // get existing header text
             string selectedTabHeader = this.tabControlPanel.SelectedItem.ToString();
-            selectedTabHeader.Replace("System.Windows.Controls.TabItem Header:", "");
-            selectedTabHeader.Replace("Content:", "");
-            selectedTabHeader.Trim();
+            // to delete anything before PlayStation
+            int i = selectedTabHeader.IndexOf(" PlayStation2");
+            if (i >= 0) selectedTabHeader = selectedTabHeader.Substring(i + 1);
+
             addNewGameView.txtPlatform.Text = selectedTabHeader;
 
             if (addNewGameView.ShowDialog() == true)
